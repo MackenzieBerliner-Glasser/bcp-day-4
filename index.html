@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        label{
+        label {
             cursor: pointer;
+        }
+
+        button {
+            background-color:'steelblue'
+        }
+
+        .big-number {
+            background: steelblue;
+            color: white;
+            font-family:fantasy
+            font-weight
         }
     </style>
 
@@ -18,43 +29,49 @@
     <main>
         <p>
             <label>
-                Name:
-                <input id = "name">
+                Number:
+                <input id = "number">
             </label>
         </p>
         <p>
             <label>
-                <input name = "power" type = "radio"> Square
+                <input name = "power" type = "radio" value = "2"> Square
             </label>
     
             <label>
-                <input name = "power" type = "radio"> Cube
+                <input name = "power" type = "radio" value = "3"> Cube
             </label>
     
             <label>
-                <input name = "power" type = "radio"> Quad
+                <input name = "power" type = "radio" value = "4"> Quad
             </label>
     
         </p>
 
         <p>
-            <button onclick="showName()">click me </button>
+            <button onclick="calculate()">Calculate</button>
         </p>
 
-        <p id = "result">
-
-        </p>
+        <p id = "result">Please input a number.</p>
 
     </main>
 
     <script>
-        function showName() {
-            var input = document.getElementById('name');
-            var name = input.value;
-
+        function calculate() {
+            var input = document.getElementById('number');
+            var number = input.value;
+            var radio = document.querySelector('input[name=power]:checked');
+            var power = radio.value;
+            var result = Math.pow(number, power);
             var p = document.getElementById('result')
-            p.innerText = 'Your name is ' + name;
-            p.style.backgroundColor = 'red'
+            p.innerText = 'Your number ' + number + ' to the ' + power + ' is ' + result;
+
+            if(number > 25){
+               p.classList.add('big-number')
+            }
+            else {
+                p.classList.remove('big-number')
+            }
         }
     
         function count() {
