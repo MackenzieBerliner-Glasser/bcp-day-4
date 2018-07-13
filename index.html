@@ -28,29 +28,24 @@
             <input name = "power" type = "radio"> Quad
         </label>
 
-    <p>
-        <textarea>default content</textarea>
-    </p>
-    
-    <p>
-        <select>
-            <option>blue</option>
-            <option>red</option>
-            <option>green</option>
-        </select>
+        <input onkeypress="change()">
 
-    </p>
-
-    <p>
-        <button>click me </button>
-    </p>
+        <p>
+            <button onclick="count()">click me </button>
+        </p>
 
     </main>
 
     <script>
-    
-        for(var i = 0; i < 20; i++) {
-            console.log(i + 1);
+
+        function count() {
+            for(var i = 0; i < 10; i++) {
+                console.log(i + 1);
+            }
+        }
+
+        function change() {
+            console.log('a change happend');
         }
     
     </script>
