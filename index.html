@@ -57,6 +57,7 @@
     </main>
 
     <script>
+        
         function calculate() {
             var input = document.getElementById('number');
             var number = input.value;
@@ -66,7 +67,7 @@
             var p = document.getElementById('result')
             p.innerText = 'Your number ' + number + ' to the ' + power + ' is ' + result;
 
-            if(number > 25){
+            if(result > 2500){
                p.classList.add('big-number')
             }
             else {
@@ -74,11 +75,6 @@
             }
         }
     
-        function count() {
-            for(var i = 0; i < 10; i++) {
-                console.log(i + 1);
-            }
-        }
     </script>
     
 </body>
